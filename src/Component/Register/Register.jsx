@@ -1,8 +1,11 @@
 import React, { useContext } from 'react'
-import { AuthContext } from '../../AuthProvider/AUthProvider'
+import { AuthContext } from '../AuthProvider'
+
+
 
 export default function Register() {
-    const { user, createLocalUser } = useContext(AuthContext)
+    const { createLocalUser } = useContext(AuthContext)
+
     const hendleform = e => {
         e.preventDefault()
         const shotr = e.target
@@ -11,9 +14,10 @@ export default function Register() {
         const objinfo = { email, password }
         console.log(objinfo)
 
-        createLocalUser(password, email)
+        createLocalUser(email, password)
             .then(result => {
                 console.log(result.user)
+                alert('added your user register')
             })
             .catch(error => {
                 console.log(error)

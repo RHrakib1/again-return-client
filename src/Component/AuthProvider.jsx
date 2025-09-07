@@ -5,7 +5,7 @@ import auth from '../Provider/Firebase.config'
 
 export const AuthContext = createContext()
 
-export default function AUthProvider({ children }) {
+export default function AuthProvider({ children }) {
     const [user, setuser] = useState(null)
 
     const createLocalUser = (email, password) => {
