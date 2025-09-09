@@ -11,6 +11,8 @@ import Login from './Component/Login/Login.jsx'
 import Register from './Component/Register/Register.jsx'
 import Home from './Component/Home/Home.jsx'
 import AuthProvider, { AuthContext } from './Component/AuthProvider.jsx'
+import Update from './Component/Server/Update.jsx'
+import AddReturn from './Component/Server/AddReturn.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/addreturn',
+        element: <AddReturn></AddReturn>
+      },
+      {
+        path: '/updatereturn',
+        element: <Update></Update>
       },
     ]
   },
