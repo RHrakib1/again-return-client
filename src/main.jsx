@@ -37,8 +37,9 @@ const router = createBrowserRouter([
         element: <AddReturn></AddReturn>
       },
       {
-        path: '/updatereturn',
-        element: <Update></Update>
+        path: '/updatereturn/:id',
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5000/returncoffee/${params.id}`)
       },
       {
         path: '/viewdata',
