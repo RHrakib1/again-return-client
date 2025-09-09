@@ -11,6 +11,21 @@ export default function AddReturn() {
         const photo = shortdata.photo.value
         const objdata = { name, price, quantity, type, photo }
         console.log(objdata)
+
+
+        fetch('http://localhost:5000/returncoffee', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(objdata)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+
+
+
     }
     return (
         <div>
