@@ -21,7 +21,12 @@ export default function AddReturn() {
             body: JSON.stringify(objdata)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.insertedId) {
+                    alert('allw this like ')
+                }
+                console.log(data)
+            })
 
 
 
