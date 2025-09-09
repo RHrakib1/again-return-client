@@ -13,6 +13,7 @@ import Home from './Component/Home/Home.jsx'
 import AuthProvider, { AuthContext } from './Component/AuthProvider.jsx'
 import Update from './Component/Server/Update.jsx'
 import AddReturn from './Component/Server/AddReturn.jsx'
+import View from './Component/View/View.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         path: '/updatereturn',
         element: <Update></Update>
       },
+      {
+        path: '/viewdata',
+        element: <View></View>,
+        loader: () => fetch('http://localhost:5000/returncoffee')
+      }
     ]
   },
 ]);
