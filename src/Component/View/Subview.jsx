@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { CgKey } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 
-export default function Subview({ data }) {
+export default function Subview({ data, coffee, setcoffee }) {
     const { _id, price, name, quantity, photo } = data
 
     const heldeldete = _id => {
@@ -35,6 +35,8 @@ export default function Subview({ data }) {
                         });
 
                     }
+                    const remainingdata = coffee.filter(d => d._id !== _id)
+                    setcoffee(remainingdata)
                 })
 
 
@@ -53,7 +55,7 @@ export default function Subview({ data }) {
                 <div className='flex gap-5'>
                     <button onClick={() => heldeldete(_id)} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"><RiDeleteBin5Line ></RiDeleteBin5Line ></button>
                     <Link to={`/updatereturn/${_id}`}>
-                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"><FaRegEdit ></FaRegEdit ></button>
+                        <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"><FaRegEdit ></FaRegEdit ></button>
                     </Link>
                 </div>
             </div>
